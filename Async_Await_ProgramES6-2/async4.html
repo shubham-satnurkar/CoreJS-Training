@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Async-Await-4</title>
+		
+	</head>
+	<body>	
+		<h2>Async Await Programs</h2>
+		<p id="target"></p>
+		<script>
+			const shower=(time)=>new Promise((resolve, reject)=>{
+				resolve(time)
+			})
+			const breakFast=(time)=> new Promise((resolve, reject)=>{
+				resolve(time);
+			})
+			const readyOffice=(time)=> new Promise((resolve, reject)=>{
+				resolve(time);
+			})
+
+			const schedule=async (time)=>{
+
+				try{
+
+					const step1 =await shower(time);
+					const step2 =await breakFast(step1);
+					const step3 =await readyOffice(step2);
+					return step3;
+				}
+
+				catch(error){
+					console.log(error)
+				}
+			}
+			console.log(schedule(20))
+		</script>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Promise-Chaining</title>
+	</head>
+	<body>	
+		<h3>Promise Example-Chaining</h3>
+		<script>
+			const addition=(x,y)=>{
+				return new Promise((resolve, reject)=>{
+					setTimeout(()=>{
+						if(x<0 || y<0){
+							return reject("Number Should be positive");
+						}
+						resolve(x+y)
+					}, 500)
+
+				})
+			}
+			addition(15,35).then(sum=>{
+				console.log(sum);
+				document.write(sum+"<br>");
+				return addition(sum, 50)
+			})
+			.then(sum1=>{
+				console.log(sum1)
+				document.write(sum1+"<br>")
+				return addition(sum1, 20)
+			})
+			.then(sum2=>{
+				console.log(sum2)
+				document.write(sum2+"<br>")
+				return addition(sum2, 100)
+			})
+			.then(sum3=>{
+				console.log(sum3)
+				document.write(sum3+"<br>")
+			})
+			.catch(error=>{
+				console.log(error)
+				document.write(error+"<br>")
+			})
+		</script>
+	</body>
+</html>

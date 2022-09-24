@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Objects</title>
+	</head>
+	<body>
+
+		<script>
+
+			// Object Litrals
+			document.write("<b>Object Litrals</b>");
+			var obj ={
+				fname : "Shubham",
+				lname : "Satnurkar",
+				fullname: function(){
+					return this.fname+ " " +this.lname;
+				}
+			}
+			console.log(obj.fname);
+			console.log(obj.fullname());
+			document.write("<br>"+obj.fname+"<br>");
+			document.write(obj.fullname());
+
+			//we need this kyeword to tell browser that we need which property and value.
+
+
+
+			// Object Constructor
+			document.write("<br><br>"+"<b>Object Constructor</b>");
+
+			var obj2= new Object();
+			obj2.fname ="Shubham";
+			obj2.lname = "Satnurkar";
+			obj2.fullname=function(){
+				return this.fname+ " " + this.lname;
+			}
+			console.log(obj2.fullname());
+			document.write("<br>"+obj2.fullname());
+
+			// 2nd Way
+			function Person(fname, lname){
+				this.fname=fname;
+				this.lname=lname;
+				this.fullname= function(){
+					return this.fname+ " "+ this.lname;
+				}
+			}
+			var person = new Person("Shubham", "Satnurkar");
+			console.log(person.fname);
+			document.write("<br>"+person.fullname());
+		</script>
+	</body>
+</html>

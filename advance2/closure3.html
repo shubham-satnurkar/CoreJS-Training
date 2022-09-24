@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Closure-3</title>
+	</head>
+	<body>
+
+		<script>
+			var rentPrice = function(initialRent){
+				var rent = initialRent;
+				console.log("Outer : "+ rent)
+				document.write("Outer : "+ rent + "<br>")
+				return{
+					getRent:function(){
+						console.log("Initial Rent "+rent)
+						document.write("Initial Rent "+rent+ "<br>")
+					},
+					incRent:function(amount){
+						rent+=amount;
+						console.log("Increment Rent "+rent);
+						document.write("Increment Rent "+rent+ "<br>");
+					},
+					decRent:function(amount){
+						rent-=amount;
+						console.log("Decrement Rent "+rent);
+						document.write("Decrement Rent "+rent)+ "<br>";
+					}
+				}
+			}
+			var originalRent= rentPrice(10000);
+			originalRent.getRent();
+			originalRent.incRent(5000);
+			originalRent.decRent(2000);
+		</script>
+	</body>
+</html>

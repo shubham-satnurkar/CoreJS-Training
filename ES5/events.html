@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Events</title>
+	</head>
+	<body onload="colorChange('purple')">
+
+		<button onclick="colorChange('red')" onmouseover="colorChange('green')" onmouseleave="colorChange('blue')" onmouseenter="colorChange('cyan')" onmousedown="colorChange('maroon')" onmousedown="colorChange('black')">Click Here</button>
+
+
+		<script>
+			function colorChange(color)  {
+				document.bgColor=color;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Program 1 Word Count</title>
+	</head>
+	<body>
+		<h1>Total Word Count</h1>
+		<textarea id="inputField" rows="5" cols="50"></textarea><br>
+		<button onclick="checkWord()">Check</button><br>
+		<div id="target"></div>
+		<div id="str"></div>
+
+		<script>
+			 // function checkWord(){
+				// var text = document.getElementById("inputField").value;
+				// var target = document.getElementById("target");
+			 // 	var count = 0;	
+			 // 	for(i=0; i<text.length; i++){
+			 // 		var char = text[i];
+			 // 		if(char == " "){
+			 // 			count+=1;
+			 // 		}
+			 // 	}
+			 // 	count+=1;
+			 // 	target.textContent = "Total Words are "+count;		 	
+			 // }
+
+
+			function checkWord() {
+			 	let text= document.getElementById("inputField").value;
+			 	let target= document.getElementById("target");
+			 	let str= document.getElementById("str");
+			 	let string = text.length;
+			 	let count = 0;
+			 	for(let i=0; i<text.length; i++){
+			 		let char = text[i];
+			 		if(char==" "){
+			 			count+=1;
+			 		}
+			 	}
+			 	count+=1;
+			 	target.textContent= "Total Words are "+ count;
+			 	str.textContent= "Total letters are "+ string;
+			}
+		</script>
+	</body>
+</html>

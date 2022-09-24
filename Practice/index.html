@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Jquery Practice</title>
+		<style>
+			.text{font-size: 40px;margin-bottom: 300px;color: red;}
+			.moveText{position: fixed; top: 120px;}
+			.result{color: green;font-size: 20px;background-color: antiquewhite;padding: 20px;position: fixed;top: 100px;left: 0;display: none;}
+		</style>
+	</head>
+	<body>
+		<h1>Welcome</h1>
+		<input type="text"><span id="focus" style="display: none;">Focus Fire</span>
+		<div>Keypress : <span></span></div>
+		<p>Hey there!</p>
+		<button type="button" class="moveBtn">Replace</button>
+		<p class="moveText">Welcome to India</p>
+		<input type="email" class="email">
+		<div class="error" style="color: red;display: none;">Please put valid email</div>
+		<select name="city" id="myCity">
+			<option value="Nagpur">Nagpur</option>
+			<option value="Pune">Pune</option>
+			<option value="Mumbai">Mumbai</option>
+			<option value="Nashik">Nashik</option>
+			<option value="Wardha">Wardha</option>
+		</select>
+		
+		<form>
+			<table border="1" cellpadding="20">
+				<tr>
+					<th><label for="email">Email : </label></th>
+					<td>
+						<input type="email" placeholder="email">
+						<div id="error1" style="color: red;"></div>
+					</td>
+				</tr>
+				<tr>
+					<th><label for="password">Password : </label></th>
+					<td><input type="password" placeholder="password"></td>
+				</tr>
+				<tr align="center">
+					<td colspan="2"><input type="submit" value="Login"></td>
+				</tr>
+
+			</table>
+		</form>
+		<div class="text">Welcome To JQUery Tutorial</div>
+		<div class="text">Welcome To JQUery Tutorial</div>
+		<div class="text">Welcome To JQUery Tutorial</div>
+		<div class="text">Welcome To JQUery Tutorial</div>
+		<div class="text">Welcome To JQUery Tutorial</div>
+
+		<p class="result">Scroll Body</p>
+
+		
+		<script src="jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				let i = 0;
+				$('input[type="text"]').keypress(function(){
+					$('span').text(i += 1 );
+					$('p').show().fadeOut().css('background', "lightgreen");
+				});
+
+				$('#myCity').change(function(){
+					let selectedOpt = $(this).find(":selected").val();
+					alert("You have selected - " + selectedOpt);
+				})
+				$('input').focus(function(){
+					$(this).next('#focus').show().fadeOut('slow');
+				})
+				$('.email').blur(function(){
+					$(this).next('.error').show().fadeOut('slow')
+				});
+
+				$('form').submit(function(e){
+					let $email = $('#email').val() 
+					let regExp = substring($email+ '@'+ 1);
+					if($mail == ''){
+						$('#error1').text('This field is required').show().fadeOut(1000);
+						e.preventDefault();
+					}
+				});
+				
+				$(window).resize(function(){
+					$(window).bind('resize', function(){
+						$('p').text(`Window Width: ${$(window).width()}, Window Height: ${$(window).height()}`);
+					});
+				});
+
+				$(window).scroll(function(){
+					$('.result').show().fadeOut('1000')
+				})
+
+				$('.moveBtn').click(function(){
+					$('.moveText').animate({
+						'opacity': 'toggle'
+					},500)
+				})
+
+	 		});
+
+
+
+		</script>
+	</body>
+</html>

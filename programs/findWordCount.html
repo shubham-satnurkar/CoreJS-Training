@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Find Word Count</title>
+	</head>
+	<body>
+		<h3>Find Words and Letter Count</h3>
+		<textarea id="textArea" rows="5" cols="50" ></textarea>
+		<br>
+		<button type="button" onclick="showOutput()">Show</button>
+		<div>
+			<span id="words"></span><br>	
+			<span id="letters"></span>
+		</div>
+
+		<script>
+			function showOutput(){
+				let input = document.getElementById("textArea").value;
+				let words = document.getElementById("words");
+				let letters = document.getElementById("letters");
+				let string = input.length;
+				let count = 0;
+				for(let i=0; i<input.length; i++){
+					let char = input[i];
+					if(char==" "){
+						count+=1;
+					}
+				}
+				count+=1;
+				words.textContent = "Total Words are "+ count;
+				letters.textContent = "Total letters are "+ string;
+			}
+
+		</script>
+	</body>
+</html>

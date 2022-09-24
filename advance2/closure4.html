@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Closure-4</title>
+	</head>
+	<body>
+		<h2 id="heading">Closure Example HTML Content</h2>
+		<a href="#" id="size-16">16</a><br>
+		<a href="#" id="size-24">24</a><br>
+		<a href="#" id="size-50">50</a><br>
+		<script>
+			function Sizer(	size){
+				var heading = document.getElementById("heading");
+				return function(){
+					heading.style.fontSize =size+'px';
+					heading.style.transition = '1s';
+					
+				}
+			}
+			var size16 =Sizer(16);
+			var size24 =Sizer(24);
+			var size50 =Sizer(50);
+			document.getElementById("size-16").onclick=size16;
+			document.getElementById("size-24").onclick=size24;
+			document.getElementById("size-50").onclick=size50;
+		</script>
+	</body>
+</html>

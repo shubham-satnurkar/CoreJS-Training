@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Program 2</title>
+	</head>
+	<body>
+		<h1>Employees Record</h1>
+		<button onclick="empIT()">IT</button>
+		<button onclick="empAccount()">Account</button><br>
+		<div id="target"></div>
+
+		<script >
+			var employees =[
+				{name:"Shubham", department:"IT"},
+				{name:"Suraj", department:"Account"},
+				{name:"Prashant", department:"IT"},
+				{name:"Rahul", department:"Account"},
+				{name:"Akshay", department:"IT"},
+				{name:"Sumit", department:"Account"},
+				{name:"Amit", department:"IT"},
+				{name:"Pranay", department:"Account"},
+				{name:"Nishant", department:"IT"},
+				{name:"Nikhil", department:"Account"}
+			]
+			function empIT(){
+				document.getElementById("target").innerHTML = " ";
+				var output = employees.filter(emp=> emp.department == "IT");
+				for(var i=0; i<output.length; i++){
+					var elem = document.createElement("h1");
+					elem.innerHTML = output[i].name;
+					document.getElementById("target").appendChild(elem);
+				}
+			}
+
+			function empAccount(){
+				document.getElementById("target").innerHTML="";
+				var output = employees.filter(emp => emp.department == "Account");
+				for(i=0; i<output.length; i++){
+					var elem = document.createElement("h1");
+					elem.innerHTML = output[i].name;
+					document.getElementById("target").appendChild(elem);
+				}
+			}
+		</script>
+	</body>	
+</html>

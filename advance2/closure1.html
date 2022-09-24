@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Closure-1</title>
+	</head>
+	<body>
+
+		<script >
+			function racingCar(){
+				var cars= [null,"Maruti", "Fiat", "Ferari", "Lamborgini", "Duster"]; //lexical scope
+				function ridingCar(){
+					for(i=1; i<cars.length; i++){
+						console.log(cars[i]+ " is the best Racing Car");
+						document.write(i+" "+ cars[i]+ " is the best Racing Car <br>");
+
+					}
+				}
+				return ridingCar;
+			}
+			var rider = racingCar();
+			rider();
+		</script>
+	</body>
+</html>

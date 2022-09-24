@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Create Element</title>
+	</head>
+	<body>
+		<button onclick="newElem()">Click Me</button>
+		<div id="target"></div>
+
+
+		<script>
+			let target=document.getElementById("target")
+			function newElem(){
+				var para=document.createElement("p");
+				para.textContent="Hello This is Paragraph Lorem Ipsum";
+				target.appendChild(para).style.fontWeight="bold";
+
+				let tab = document.createElement('table');
+				tab.style.border = '1px solid black'
+				let row = document.createElement("tr");
+				let col = document.createElement("td");
+				while(col<10){
+					col++
+				}
+				col.textContent="hello"
+				row.appendChild(col);
+				tab.appendChild(row);
+				target.appendChild(tab)
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Callback-2</title>
+	</head>
+	<body>
+		
+		<script>
+			function greet(name, callback){
+				console.log("Welcome : "+name)
+				document.write("Welcome : "+name)
+				callback();
+			}
+			function abc(){
+				console.log("This is callback function");
+				document.write("<br>This is callback function");
+			}
+			greet("Shubham Satnurkar", abc);
+		</script>
+	</body>
+</html>

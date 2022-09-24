@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Program 5</title>
+	</head>
+	<body>
+		<h1>Validation</h1>
+		<form method="post" onsubmit="return validation()">
+			Name : <input type="text" name="fname" id="fname" ><br>
+					<span id="error1"></span><br>
+			Mobile : <input type="text" name="mobile" id="mobile"><br>
+					<span id="error1"></span><br>
+
+			<input type="submit" name="sub-btn" value="Submit">
+
+		</form>
+
+			<button onclick="print_current_page()">Print this page</button>
+		<script>
+			function validation(){
+				var fname = document.getElementById("fname").value;
+				var mobile = document.getElementById("mobile").value;
+				var error1 = document.getElementById("error1")
+				var error2 = document.getElementById("error2")
+				var regFname = /^[a-zA-Z]{6,50}$/;
+				var regMobile = /^[6-9][0-9]{9}$/;
+				if(!regFname.test(fname)){
+					error1.textContent="Name Should contain alphabate only";
+					document.getElementById("fname").focus();
+					return false;
+				}
+				else if(!regMobile.test(mobile)){
+					error2.textContent="10 Digit mobile number allow";
+					document.getElementById("mobile").focus();
+					return false;
+					console.log("Wrong Number")
+				}
+				else{
+					return true;
+				}
+			}
+
+			function print_current_page(){
+				window.print();
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Functions</title>
+	</head>
+	<body>
+
+		<button onclick="myarray()">Click Here</button>
+
+		<script>
+			// function myarray (argument) {
+			// 	var arr = [7, 14, 21, 28, 35, 42]
+			// 	var sum= 0;
+			// 	var lar = 0;
+			// 	arr.forEach((val) => {
+			// 	  document.write(val+ "<br>");
+			// 	  sum+=val;
+			// 	  if(lar<val){
+			// 	  	lar = val;
+			// 	  }
+			// 	});
+			// 	document.write("The Sum of an array is " + sum);
+			// 	document.write("<br>The Large value of an array is " + lar);
+			// }
+
+
+			function myarray(argument){
+				let arr= [12,43,53,67,23,45,26,90,34,50];
+				let sum = 0;
+				let large =0;
+				arr.forEach((val)=>{
+					document.write(`${val}<br>`);
+					sum+=val;
+					if(large<val){
+						large = val
+					}
+				});
+				console.log(sum)
+				console.log(large)
+				document.write("Sum of the value is = "+ sum)
+				document.write("<br>The Large value of an array is " + large);
+			}
+		</script>
+	</body>
+</html>

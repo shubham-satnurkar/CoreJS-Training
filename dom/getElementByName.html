@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Get Element By Name</title>
+	</head>
+	<body>
+		One :<input type="radio" name="rbtn" value="one"> 
+		Two :<input type="radio" name="rbtn" value="two"> 
+		Three :<input type="radio" name="rbtn" value="three">
+		<p id="target"></p>
+		<button onclick="abc()">Click Here</button>
+		<br><br>
+
+
+
+		<input type="text" name="fname">
+		<button onclick="add()" >Click Me</button>
+		<p id="result">Result </p>
+
+		<!-- <script>
+			// Radio Buttons Checked
+			function abc(){
+				var elem = document.getElementById("target");
+				var choices= document.getElementsByName("rbtn");
+				choices.forEach(function(val){
+					if (val.checked) {
+						elem.innerHTML="Your Choice : "+ val.value;	
+					}
+				});
+			}
+
+			// Input Add To Result
+			function add(){
+				var result = document.getElementById("result");
+				var addIn =document.getElementsByName("fname");
+				addIn.forEach(function(val){
+					result.innerHTML="Result : "+ val.value
+				})
+			}
+
+		</script> -->
+
+
+
+		<script>
+			function abc(){
+				let target = document.getElementById("target");
+				let choose = document.getElementsByName("rbtn");
+				choose.forEach((val)=>{
+					if(val.checked){
+						target.innerHTML="Your choice : " + val.value;
+					}
+				});
+			}
+
+			function add(){
+				let result = document.getElementById("result");
+				let addText = document.getElementsByName("fname");
+				addText.forEach((val)=>{
+					result.innerHTML= "Result : " + val.value
+				})
+			}
+		</script>
+	</body>
+</html>

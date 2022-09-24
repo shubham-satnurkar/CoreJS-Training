@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Get Element</title>
+	</head>	
+	<body>
+		<button onclick="colorChange()">Color Change</button>
+		<h1 id="heading">Welcome To Core Javascript </h1>
+
+		<p id="target"> Hello</p>
+		Name : <input type="text" name="fname" id="fname"><br><br>
+		<button onclick="abc()">Click Me</button><br><br>
+
+
+		<img src="../img/img-1.jpg" alt="img1" width="300" id="img" onmouseover="imgChange()">
+		<img src="../img/img-3.jpg" alt="img3" width="300" id="newImg" onmouseleave="newImg()">
+
+
+
+
+
+		<script >
+			// Onclick color Change heading
+			function colorChange(){
+				var heading = document.getElementById("heading");
+				// heading.setAttribute("style", "width: 500px; height: 300px; background-color: lightgray;");
+				heading.style.color="red"
+			}
+
+
+			// onclick input add to paragraph
+			function abc(){
+				var elem = document.getElementById("target");
+				var fname = document.getElementById("fname").value;	
+				elem.innerHTML="Hello : " +"<b>"+fname+"</b>";
+				elem.style.color="#0f0124";
+			}
+
+			// Onmouseover img change
+			function imgChange(){
+				var img= document.getElementById("img");
+				img.src="../img/img-2.jpg";
+
+			}
+			function newImg(){
+				var newImg = document.getElementById("newImg");
+				newImg.src="../img/img-1.jpg";
+			}
+
+
+		</script>
+	</body>
+</html>

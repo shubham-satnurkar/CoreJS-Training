@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Closure-2</title>
+	</head>
+	<body>
+
+		<script>
+			function Outside(){
+				var count= 20;
+				console.log("Outside : "+count);
+				function Inside(){
+					console.log(count);
+					document.write(count+" <br>");
+					count++;
+						
+					for(i=1; i<count; i++){
+						console.log(i);
+						document.write("<br>"+ i +"<br>");
+					}
+
+				}
+				return Inside;
+			}
+			var counter = Outside();
+			counter();
+			counter();
+			counter();
+
+		</script>
+	</body>
+</html>

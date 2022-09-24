@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Program 3</title>
+	</head>
+	<body>
+		<label>Select :</label>
+		<select id="select" onchange="choose()">
+			<option value="">Select</option>
+			<option value="IT">IT</option>
+			<option value="Account">Account</option>
+		</select>
+		<div id="target"></div>
+
+		<script>
+			var employees=[
+				{name:"Shubham Satnurkar", department:"IT"},
+				{name:"Suraj Meshram", department:"Account"},
+				{name:"Nishant Jadhav", department:"IT"},
+				{name:"Nikhil Takhre", department:"Account"},
+				{name:"Pranay Kalbhande", department:"IT"},
+				{name:"Shubham Mange", department:"Account"},
+				{name:"Mukesh Nikose", department:"IT"},
+				{name:"Rakesh Bawane", department:"Account"}
+			]
+			console.log(employees);
+			function choose(){
+				document.getElementById("target").innerHTML="";
+				var sel = document.getElementById("select").value;
+				if(sel!=""){
+					var output= employees.filter(emp=> emp.department == sel);
+					for(var i=0; i<output.length; i++){
+						var elem=document.createElement("h2");
+						elem.innerHTML=output[i].name;
+						document.getElementById("target").appendChild(elem);
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

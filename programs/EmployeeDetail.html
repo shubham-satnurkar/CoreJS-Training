@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Employees Details With Dropdown</title>
+	</head>
+	<body>
+		<h3>Employees Details With Dropdown</h3>
+		<select id="select" onchange="choose()">
+			<option value="">Select</option>
+			<option value="IT">IT</option>
+			<option value="Account">Account</option>
+		</select>
+		<div id="target"></div>
+
+
+		<script>
+			let employees=[
+				{name:"Shubham Satnurkar", department:"IT", compnay:"Neosoft"},
+				{name:"Suraj Meshram", department:"Account", compnay:"Reliance Jio"},
+				{name:"Nishant Jadhav", department:"IT", compnay:"Wipro"},
+				{name:"Pranay kalbandhe", department:"Account", compnay:"Bajaj"},
+				{name:"Shubham Mange", department:"IT", compnay:"Infosys"},
+				{name:"Nikhil Thakre", department:"Account", compnay:"ICICI"}
+			]
+
+			let target = document.getElementById("target"); 
+			function choose(){
+			target.innerHTML = ""; 
+				let select = document.getElementById("select").value;
+				if(select!=""){
+					var output = employees.filter(emp=> emp.department == select);
+					for(let i=0; i<output.length; i++){
+						var elem = document.createElement("h1");
+						elem.innerHTML=output[i].name, output[i].compnay;
+						target.appendChild(elem);
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

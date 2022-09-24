@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Array Methods</title>
+	</head>
+	<body>
+		<script >
+			var arr = [1,8,27,64,125,256,343];
+			var x = 512;
+			console.log(arr);
+			if(arr.includes(x)){
+				console.log('Present')
+			}
+			else {
+				console.log('Not present');
+			}
+			delete arr[0];
+			arr.splice(1, 2, 512, 729);
+
+			var y = arr.reverse();
+			console.log(y);
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Todays Date</title>
+	</head>
+	<body>
+		<div id="target"></div>
+
+		<script>
+			let target = document.getElementById("target");
+			let today = new Date();
+			let dd = today.getDate();
+			let mm = today.getMonth();
+			let yyyy = today.getFullYear();
+
+			let todayDate = dd+" / "+mm+" / "+yyyy;
+			target.innerHTML = todayDate;
+		</script>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Promise-1</title>
+	</head>
+	<body>	
+		<h3>Promise Example-1</h3>
+		<script>
+			const promise = new Promise((resolve, reject)=>{
+				let age = 18;
+
+				setTimeout(()=>{
+					if (age>=18) {
+						resolve("Adult and Elligible for the Job");
+					} else {
+						reject("Kid and not Elligile for the Job")
+					}
+				}, 1000);
+			});
+			console.log(promise);
+			document.write(promise);
+			promise.then(result=>{
+				console.log(result);
+				document.write(result);
+			});
+			promise.catch(error=>{
+				console.log(error);
+				document.write(error);
+			});
+
+		</script>
+	</body>
+</html>

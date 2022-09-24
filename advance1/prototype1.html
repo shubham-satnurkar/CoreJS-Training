@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Prototype</title>
+	</head>
+	<body>
+
+		<script>
+			function Person(){
+				this.name="Shubham Satnurkar"
+			}
+			Person.prototype.age= 26;
+			Person.prototype.profession = "Front End Developer";
+			var p1= new Person();
+			var p2= new Person();
+			var p3= new Person();
+			var p4= new Person();
+			console.log(p1.age);
+			console.log(p2.age);
+			console.log(p3.name);
+			console.log(p3.profession);
+			document.write(p3.name+" "+ p1.age+" year old is a " + p4.profession +"<br>" + p2.age);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables and Datatype</title>
+</head>
+
+<body>
+    <script>
+        // Checking all datatypes
+
+        var name = "Shubham"; //string
+        var age = 26; //number
+        var status = true; //boolean
+        var skills = ['html', ' css', ' javscript', ' jquery', ' bootstrap']; //array
+        var info = {
+            fullName : 'Shubham Dnyaneshwar Satnurkar',
+            address : 'Vishwakarma Nagar galli no. 9, Nagpur-27',
+            occupation : 'Front End Devloper (Software Designer)'
+        } //object
+        var dob = null; //nul
+        var salary; //undefined
+        salary = undefined;
+        document.write("Hello My name is "+ name +  " and datatype is " + typeof name +"<br>");
+        document.write("My age is "+ age +  " and datatype is " + typeof age+"<br>");
+        document.write("I am signle and it is "+ status +  " and datatype is " + typeof status + "<br>");
+        document.write("I have knowledge of  "+ skills +  " and datatype is " + typeof skills + "<br>");
+        document.write("Here is my personal  info "+ info +  " and datatype is " + typeof info + "<br>");
+        console.log(skills[0]);
+        console.log(info);
+        console.log(dob);
+        console.log(salary);
+
+
+        var a = 10;
+        var b = '10';
+        console.log(a==b);
+        console.log(a===b);
+        console.log(a>b);
+        console.log(a<b);
+        console.log(a>=b);
+        console.log(a<=b);
+        console.log(a!=b);
+
+
+    </script>
+
+</body>
+
+</html>
